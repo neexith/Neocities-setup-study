@@ -66,7 +66,29 @@ a:hover {
 
 }
 
+.upper-picture{
+  position: absolute;
+  top: 0px; /* Adjust this to position vertically relative to the backgroundbox */
+  left: 150px; /* Adjust this to position horizontally from the left edge */
+  animation: spin 20s linear infinite;
+  width: 200px; /* Made smaller so it doesn't cover too much */
+  height: 200px; /* Set explicit height to make it square */
+  z-index: 10; /* Ensures it appears on top of other elements */
+  transform-origin: 50% 50%; 
+  display: block; 
+  object-fit: cover; 
+}
 
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    
 .title-7{
     font-size: 1.5em;
     font-family: "Glass Antiqua", cursive;
@@ -87,7 +109,7 @@ a:hover {
     column-gap: 5px; /* Keep horizontal gap between left and right columns */
     background-color: rgba(46, 22, 202, 0.322);
     width: 80%;
-    max-width: 550px;
+    max-width: 800px;
     border: 3px solid rgba(151, 20, 245, 0.493);
     border-radius: 3px;
     padding: 0; /* Remove any default padding */
@@ -176,6 +198,7 @@ grid-column: 1 / -1; /* Span from first column to last column */
 width: 100%; /* Take full width of the backgroundbox */
 max-width: none; /* Remove max-width constraint inside backgroundbox */
 margin: 0; /* Remove margin since it's now inside the grid */
+position: relative; /* Allows absolutely positioned children to be positioned relative to this element */
 }
 
 
