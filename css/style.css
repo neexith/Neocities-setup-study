@@ -68,25 +68,14 @@ a:hover {
 
 .upper-picture{
   position: absolute;
-  top: 0px; /* Adjust this to position vertically relative to the backgroundbox */
-  left: 150px; /* Adjust this to position horizontally from the left edge */
-  animation: spin 20s linear infinite;
-  width: 200px; /* Made smaller so it doesn't cover too much */
-  height: 200px; /* Set explicit height to make it square */
+  top: 2%; /* Vertical position relative to the backgroundbox */
+  left: 25%; /* Horizontal position from the left edge */
+  width: 200px; 
+  height: 200px; 
   z-index: 10; /* Ensures it appears on top of other elements */
-  transform-origin: 50% 50%; 
   display: block; 
   object-fit: cover; 
 }
-
-    @keyframes spin {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(360deg);
-      }
-    }
 
     
 .title-7{
@@ -259,4 +248,46 @@ border: 6px solid;
 border-image-slice: 1;
 border-image-source: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
 overflow: auto;
+}
+
+/* Adaptation for different screen sizes */
+
+/* Large screens (desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .upper-picture {
+    top: 2%;
+    left: 18%;
+    width: 220px;
+    height: 220px;
+  }
+}
+
+/* Medium screens (tablets, 768px to 1199px) */
+@media (max-width: 1199px) and (min-width: 768px) {
+  .upper-picture {
+    top: 3%;
+    left: 8%;
+    width: 180px;
+    height: 180px;
+  }
+}
+
+/* Small screens (mobile landscape, 576px to 767px) */
+@media (max-width: 767px) and (min-width: 576px) {
+  .upper-picture {
+    top: 4%;
+    left: 4%;
+    width: 150px;
+    height: 150px;
+  }
+}
+
+/* Extra small screens (mobile portrait, less than 576px) */
+@media (max-width: 575px) {
+  .upper-picture {
+    top: 2%;
+    left: 10%;
+    width: 120px;
+    height: 120px;
+  }
 }
